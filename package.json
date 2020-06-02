@@ -1,0 +1,17 @@
+{
+  "name": "eslint-plugin-function-call-context",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Glinkis/eslint-plugin-function-call-context.git",
+  "author": "<glinkis@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "node index.test.js"
+  },
+  "peerDependencies": {
+    "eslint": ">=0.8.0"
+  },
+  "devDependencies": {
+    "eslint": "7.1.0"
+  }
+}
