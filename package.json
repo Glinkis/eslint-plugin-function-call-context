@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-function-call-context",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "repository": "https://github.com/Glinkis/eslint-plugin-function-call-context.git",
   "author": "<glinkis@gmail.com>",
