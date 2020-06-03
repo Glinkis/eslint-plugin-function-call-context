@@ -32,7 +32,7 @@ ruleTester.run("call-in-function", rule, {
         }
       `,
       parser,
-      options: ["Array.prototype.concat"]
+      options: ["concat"]
     }
   ],
   invalid: [
@@ -45,8 +45,8 @@ ruleTester.run("call-in-function", rule, {
     {
       code: "[].concat([])",
       parser,
-      options: ["Array.prototype.concat"],
-      errors: 0
+      options: ["concat"],
+      errors: 1
     }
   ]
 })
