@@ -23,7 +23,7 @@ ruleTester.run("call-in-function", rule, {
         }
       `,
       parser,
-      options: ["called"]
+      options: [{ functions: ["called"] }]
     },
     {
       code: `
@@ -32,20 +32,20 @@ ruleTester.run("call-in-function", rule, {
         }
       `,
       parser,
-      options: ["concat"]
+      options: [{ methods: ["concat"] }]
     }
   ],
   invalid: [
     {
       code: "called()",
       parser,
-      options: ["called"],
+      options: [{ functions: ["called"] }],
       errors: 1
     },
     {
       code: "[].concat([])",
       parser,
-      options: ["concat"],
+      options: [{ methods: ["concat"] }],
       errors: 1
     }
   ]
