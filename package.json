@@ -6,13 +6,15 @@
   "author": "<glinkis@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "test": "node index.test.js"
+    "test": "node index.test.js",
+    "format": "prettier . --write"
   },
   "peerDependencies": {
     "eslint": ">=0.8.0"
   },
   "devDependencies": {
     "babel-eslint": "10.1.0",
-    "eslint": "7.1.0"
+    "eslint": "7.1.0",
+    "prettier": "2.0.5"
   }
 }

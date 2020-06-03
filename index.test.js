@@ -7,8 +7,8 @@ const parserOptions = {
   ecmaVersion: 2018,
   sourceType: "module",
   ecmaFeatures: {
-    modules: true,
-  },
+    modules: true
+  }
 }
 
 const ruleTester = new RuleTester({ parserOptions })
@@ -23,7 +23,7 @@ ruleTester.run("call-in-function", rule, {
         }
       `,
       parser,
-      options: ["called"],
+      options: ["called"]
     },
     {
       code: `
@@ -32,21 +32,21 @@ ruleTester.run("call-in-function", rule, {
         }
       `,
       parser,
-      options: ["Array.prototype.concat"],
-    },
+      options: ["Array.prototype.concat"]
+    }
   ],
   invalid: [
     {
       code: "called()",
       parser,
       options: ["called"],
-      errors: 1,
+      errors: 1
     },
     {
       code: "[].concat([])",
       parser,
       options: ["Array.prototype.concat"],
-      errors: 0,
-    },
-  ],
+      errors: 0
+    }
+  ]
 })

@@ -1,3 +1,3 @@
 module.exports = {
-  "call-in-function": require("./lib/rules/call-in-function"),
+  "call-in-function": require("./lib/rules/call-in-function")
 }
