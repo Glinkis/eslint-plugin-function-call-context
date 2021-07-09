@@ -17,7 +17,7 @@ module.exports = {
 
         return {
           CallExpression(node) {
-            const { callee } = node
+            let { callee, parent } = node
 
             const descriptor = { node, message: "" }
 
@@ -37,8 +37,6 @@ module.exports = {
               default:
                 return
             }
-
-            let parent = node.parent
 
             // Look for a function declaration anywhere in the tree.
             while (parent.parent) {
