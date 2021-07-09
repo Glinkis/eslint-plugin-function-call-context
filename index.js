@@ -17,8 +17,6 @@ module.exports = {
 
         return {
           CallExpression(node) {
-            if (node.type !== "CallExpression") return
-
             const { callee } = node
 
             const descriptor = { node, message: "" }
