@@ -18,20 +18,19 @@ module.exports = {
         return {
           CallExpression(node) {
             let { callee, parent } = node
-
-            const descriptor = { node, message: "" }
+            let message = ""
 
             switch (callee.type) {
               case "Identifier": {
                 if (!functions.includes(callee.name)) return
-                descriptor.message = `Function '${callee.name}' must be called inside a function.`
+                message = `Function '${callee.name}' must be called inside a function.`
                 break
               }
               case "MemberExpression": {
                 const { property } = callee
                 if (property.type !== "Identifier") return
                 if (!methods.includes(property.name)) return
-                descriptor.message = `Method '${property.name}' must be called inside a function.`
+                message = `Method '${property.name}' must be called inside a function.`
                 break
               }
               default:
@@ -46,7 +45,7 @@ module.exports = {
               parent = parent.parent
             }
 
-            context.report(descriptor)
+            context.report({ node, message })
           }
         }
       }
