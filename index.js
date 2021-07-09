@@ -26,14 +26,14 @@ module.exports = {
             switch (callee.type) {
               case "Identifier": {
                 if (!functions.includes(callee.name)) return
-                descriptor.message = `Function '${callee.name}' is must be called inside a function.`
+                descriptor.message = `Function '${callee.name}' must be called inside a function.`
                 break
               }
               case "MemberExpression": {
                 const { property } = callee
                 if (property.type !== "Identifier") return
                 if (!methods.includes(property.name)) return
-                descriptor.message = `Method '${property.name}' is must be called inside a function.`
+                descriptor.message = `Method '${property.name}' must be called inside a function.`
                 break
               }
               default:
