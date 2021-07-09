@@ -12,9 +12,9 @@ const parserOptions = {
 }
 
 const ruleTester = new RuleTester({ parserOptions })
-const rule = require("./lib/rules/call-in-function")
+const rules = require("./").rules
 
-ruleTester.run("call-in-function", rule, {
+ruleTester.run("call-in-function", rules["call-in-function"], {
   valid: [
     {
       code: `
